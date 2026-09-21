@@ -1,3 +1,4 @@
+using Link_List.Menus;
 using TesteAlura.Cadastros;
 using TesteAlura.Interface;
 using TesteAlura.Models.Musica;
@@ -10,10 +11,11 @@ namespace TesteAlura.Menus
         private CadastroArtistas cadastro;
         private int idArtista;
         private Artista artista;
-
+        
         public MenuAlbum(Artista artistaSelecionado)
         {
             artista = artistaSelecionado;
+            
         }
 
         public void Exibir()
@@ -51,24 +53,7 @@ namespace TesteAlura.Menus
                         Console.ReadKey(true);
                         break;
                     case 3:
-                        artista.ListarAlbuns();
-
-                        Console.Write("Digite o nome do álbum que deseja selecionar: ");
-                        string nomeAlbum = Console.ReadLine();
-
-                        Album albumSelecionado = artista.BuscarAlbumPorNome(nomeAlbum);
-
-                        if (albumSelecionado != null)
-                        {
-                            
-                        }
-                        else
-                        {
-                            Console.WriteLine("Álbum não encontrado.");
-                        }
-
-                        Console.WriteLine("Pressione qualquer tecla para continuar...");
-                        Console.ReadKey(true);
+                        SelecionarAlbum();
                         break;
                     default:
                         Console.WriteLine("Digite uma opção válida");
@@ -78,6 +63,29 @@ namespace TesteAlura.Menus
 
 
             }
+        }
+
+        public void SelecionarAlbum()
+        {
+            artista.ListarAlbuns();
+
+            Console.Write("Digite o nome do álbum que deseja selecionar: ");
+            string nomeAlbum = Console.ReadLine();
+
+            Album albumSelecionado = artista.BuscarAlbumPorNome(nomeAlbum);
+
+            if (albumSelecionado != null)
+            {
+                MenuAlbumSelecionado menuAlbumSelecionado = new MenuAlbumSelecionado(albumSelecionado, artista);
+                menuAlbumSelecionado.Exibir();
+    }
+            else
+            {
+                Console.WriteLine("Álbum não encontrado.");
+            }
+
+            Console.WriteLine("Pressione qualquer tecla para continuar...");
+            Console.ReadKey(true);
         }
     }
 }
