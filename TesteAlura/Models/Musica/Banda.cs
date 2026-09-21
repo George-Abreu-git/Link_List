@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,22 +8,22 @@ namespace TesteAlura.Models.Musica
 {
     internal class Banda : Artista
     {
-        public Banda(string nome) : base(nome)
+        public Banda(int id, string nome) : base(id, nome)
         {
-
+            
         }
 
-        private List<string> integrantes = new List<string>();
+        private List<Artista> integrantes = new List<Artista>();
 
 
-        public void AdicionarIntegrante(string nomeIntegrante)
+        public void AdicionarIntegrante(Artista nomeIntegrante)
         {
             integrantes.Add(nomeIntegrante);
         }
 
         public void ListarIntegrantes()
         {
-            foreach (string integrante in integrantes)
+            foreach (Artista integrante in integrantes)
             {
                 Console.WriteLine(integrante);
             }

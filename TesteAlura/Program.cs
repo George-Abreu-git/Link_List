@@ -15,7 +15,7 @@ public class Program
         
         CadastroArtistas artistas = new CadastroArtistas();
         DadosIniciais.Carregar(artistas);
-        MenuArtistas menu = new MenuArtistas(artistas);
+        MenuPrincipal menu = new MenuPrincipal(artistas);
         menu.Exibir();
 
 

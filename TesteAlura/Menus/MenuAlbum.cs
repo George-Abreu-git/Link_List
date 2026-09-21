@@ -1,4 +1,4 @@
-﻿using TesteAlura.Cadastros;
+using TesteAlura.Cadastros;
 using TesteAlura.Interface;
 using TesteAlura.Models.Musica;
 
@@ -23,18 +23,18 @@ namespace TesteAlura.Menus
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine($"Menu de Album da banda{artista.Nome}\n");
+                Console.WriteLine($"Álbuns de {artista.Nome}\n");
 
                 Console.WriteLine("1 - Cadastrar Album\n");
                 Console.WriteLine("2 - Listar Albuns\n");
-                Console.WriteLine("3 - Selecionar Album Album\n");
+                Console.WriteLine("3 - Selecionar Album\n");
                 Console.WriteLine("0 - Voltar\n");
                 opcaoEscolhida = int.Parse(Console.ReadLine());
 
                 switch (opcaoEscolhida)
                 {
                     case 0:
-                        Console.WriteLine($"Voltando ao menu de {artista.GetType}...");
+                        Console.WriteLine($"Voltando ao menu de {artista.Nome}...");
                         Thread.Sleep(2500);
                         return;
                     case 1:
@@ -53,7 +53,7 @@ namespace TesteAlura.Menus
                     case 3:
                         artista.ListarAlbuns();
 
-                        Console.Write("Digite o nome do álbum que deseja excluir: ");
+                        Console.Write("Digite o nome do álbum que deseja selecionar: ");
                         string nomeAlbum = Console.ReadLine();
 
                         Album albumSelecionado = artista.BuscarAlbumPorNome(nomeAlbum);

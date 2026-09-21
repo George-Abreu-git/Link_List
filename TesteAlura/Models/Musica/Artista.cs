@@ -1,14 +1,17 @@
-﻿namespace TesteAlura.Models.Musica
+namespace TesteAlura.Models.Musica
 {
     internal class Artista
     {
 
-        public Artista(string nome)
+        public Artista(int id, string nome)
         {
+            this.id = id;
             Nome = nome;
 
         }
 
+        private int id;
+        public int Id => id;
         private string nome;
         private double avaliacao;
         private List<Album> albuns = new List<Album>();
@@ -23,7 +26,7 @@
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("O nome da banda não pode ser nulo ou vazio.");
+                    throw new ArgumentException("O nome do artista não pode ser nulo ou vazio.");
                 }
                 nome = value;
             }
@@ -37,7 +40,7 @@
             {
                 if (value < 0 || value > 10)
                 {
-                    throw new ArgumentOutOfRangeException("A avaliacao da banda deve estar entre 0 e 10.");
+                    throw new ArgumentOutOfRangeException("A avaliacao do artista deve estar entre 0 e 10.");
                 }
                 avaliacao = value;
             }
@@ -58,7 +61,7 @@
 
         public void ListarAlbuns()
         {
-            Console.WriteLine($"Álbuns da banda: {Nome}\n");
+            Console.WriteLine($"Álbuns do artista: {Nome}\n");
             foreach (Album album in albuns)
             {
                 if (albuns.Count == 0)

@@ -58,7 +58,7 @@ namespace TesteAlura.Menus
                         Console.ReadKey(true);
                         break;
                     case 3:
-                        cadastro.ExcluirBanda(idBanda);
+                        cadastro.ExcluirArtista(idBanda);
                         Console.WriteLine("Excluindo banda...");
                         Thread.Sleep(2000);
                         Console.WriteLine($"Banda {banda.Nome} excluida");
