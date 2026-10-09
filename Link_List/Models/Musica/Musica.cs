@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 
 
-namespace TesteAlura.Models.Musica
+namespace Link_List.Models
 {
     internal class Musica
     {
