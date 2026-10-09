@@ -1,32 +1,33 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Link_List.Models;
 
-//namespace TesteAlura.Models.Musica
-//{
-//    internal class Banda : Artista
-//    {
-//        public Banda(int id, string nome) : base(id, nome)
-//        {
+namespace Link_List.Models
+{
+   internal class Banda : Artista
+   {
+       public Banda(int id, string nome) : base(id, nome)
+       {
             
-//        }
+       }
 
-//        private List<Artista> integrantes = new List<Artista>();
+       private List<Artista> integrantes = new List<Artista>();
 
 
-//        public void AdicionarIntegrante(Artista nomeIntegrante)
-//        {
-//            integrantes.Add(nomeIntegrante);
-//        }
+       public void AdicionarIntegrante(Artista nomeIntegrante)
+       {
+           integrantes.Add(nomeIntegrante);
+       }
 
-//        public void ListarIntegrantes()
-//        {
-//            foreach (Artista integrante in integrantes)
-//            {
-//                Console.WriteLine(integrante);
-//            }
-//        }
-//    }
-//}
+       public void ListarIntegrantes()
+       {
+           foreach (Artista integrante in integrantes)
+           {
+               Console.WriteLine(integrante.Nome);
+           }
+       }
+   }
+}
