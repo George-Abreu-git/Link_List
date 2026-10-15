@@ -1,0 +1,33 @@
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using Link_List.Models;
+
+//namespace Link_List.Models
+//{
+//   internal class Banda : ArtistaMusical
+//    {
+//       public Banda(int id, string nome) : base(id, nome)
+//       {
+            
+//       }
+
+//       private List<Artista> integrantes = new List<Artista>();
+
+
+//       public void AdicionarIntegrante(Artista nomeIntegrante)
+//       {
+//           integrantes.Add(nomeIntegrante);
+//       }
+
+//       public void ListarIntegrantes()
+//       {
+//           foreach (Artista integrante in integrantes)
+//           {
+//               Console.WriteLine(integrante.Nome);
+//           }
+//       }
+//   }
+//}

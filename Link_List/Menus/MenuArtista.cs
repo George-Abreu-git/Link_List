@@ -1,16 +1,16 @@
-using TesteAlura.Cadastros;
-using TesteAlura.Interface;
+using Link_List.Cadastros;
+using Link_List.Interface;
 using Link_List.Models;
 
-namespace TesteAlura.Menus
+namespace Link_List.Menus
 {
    internal class MenuArtista : IMenu
    {
-       private Artista artista;
+       private ArtistaMusicalSolo artista;
        private CadastroArtistas cadastro;
        private MenuAlbum menuAlbum;
 
-       public MenuArtista(Artista artistaSelecionado, CadastroArtistas cadastro)
+       public MenuArtista(ArtistaMusicalSolo artistaSelecionado, CadastroArtistas cadastro)
        {
            artista = artistaSelecionado;
            this.cadastro = cadastro;

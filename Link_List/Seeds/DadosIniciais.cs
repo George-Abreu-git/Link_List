@@ -1,7 +1,7 @@
-using TesteAlura.Cadastros;
+using Link_List.Cadastros;
 using Link_List.Models;
 
-namespace TesteAlura.Seeds
+namespace Link_List.Seeds
 {
    internal static class DadosIniciais
    {
@@ -10,7 +10,7 @@ namespace TesteAlura.Seeds
        {
            Genero industrial = new Genero { Nome = "Rock industrial" };
 
-           Artista manson = cadastro.CadastrarArtistaSolo("Marilyn Manson");
+           ArtistaMusicalSolo manson = cadastro.CadastrarArtistaSolo("Marilyn Manson");
            Album mansonAlbum = new Album("The Pale Emperor");
            mansonAlbum.AnoLancamento = 2015;
 

@@ -6,14 +6,14 @@ namespace Link_List.Models
     internal class Musica
     {
 
-        private Artista artista;
+        private ArtistaMusicalSolo artista;
         private string nome;
         private int duracao;
         private Genero genero;
          private bool disponivel;
 
 
-        public Musica(Artista artistaNome, string nomeMusica)
+        public Musica(ArtistaMusicalSolo artistaNome, string nomeMusica)
         {
            artista = artistaNome;
            nome = nomeMusica;
@@ -27,7 +27,7 @@ namespace Link_List.Models
         {
            get => nome;
         }
-        public Artista GetArtista
+        public ArtistaMusicalSolo GetArtista
         {
            get => artista;
             

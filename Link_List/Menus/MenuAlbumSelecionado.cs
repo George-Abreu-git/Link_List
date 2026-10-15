@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TesteAlura.Cadastros;
-using TesteAlura.Interface;
-using TesteAlura.Menus;
+using Link_List.Cadastros;
+using Link_List.Interface;
+using Link_List.Menus;
 using Link_List.Models;
 
 namespace Link_List.Menus
 {
    internal class MenuAlbumSelecionado : IMenu
    {
-       private Artista artista;
+       private ArtistaMusicalSolo artista;
        private CadastroArtistas cadastro;
        private Album album;
 
-       public MenuAlbumSelecionado(Album albumSelecionado, Artista artistaSelecionado)
+       public MenuAlbumSelecionado(Album albumSelecionado, ArtistaMusicalSolo artistaSelecionado)
        {
            this.album = albumSelecionado;
            this.artista = artistaSelecionado;

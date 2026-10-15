@@ -2,10 +2,10 @@ using Link_List.Models;
 
 namespace Link_List.Models
 {
-    internal class Artista
+    internal class ArtistaMusicalSolo 
     {
 
-        public Artista(int id, string nome)
+        public ArtistaMusicalSolo(int id, string nome)
         {
             this.id = id;
             Nome = nome;
@@ -13,9 +13,7 @@ namespace Link_List.Models
         }
 
         private int id;
-        public int Id => id;
         private string nome;
-        private double avaliacao;
         private List<Album> albuns = new List<Album>();
         private bool artistaRegistrado;
         private Genero generoMusical;
@@ -34,20 +32,21 @@ namespace Link_List.Models
             }
         }
 
-        public double Nota
-        {
-            get => avaliacao;
+        public int Id => id;
+        //public double Nota
+        //{
+        //    get => avaliacao;
 
-            set
-            {
-                if (value < 0 || value > 10)
-                {
-                    // REVIEW 🟢: Qual é o primeiro parâmetro do construtor de ArgumentOutOfRangeException com uma única string: o nome do parâmetro ou a mensagem? Confira na documentação e veja como sua mensagem aparece quando a exceção é lançada.
-                    throw new ArgumentOutOfRangeException("A avaliacao do artista deve estar entre 0 e 10.");
-                }
-                avaliacao = value;
-            }
-        }
+        //    set
+        //    {
+        //        if (value < 0 || value > 10)
+        //        {
+        //            // REVIEW 🟢: Qual é o primeiro parâmetro do construtor de ArgumentOutOfRangeException com uma única string: o nome do parâmetro ou a mensagem? Confira na documentação e veja como sua mensagem aparece quando a exceção é lançada.
+        //            throw new ArgumentOutOfRangeException("A avaliacao do artista deve estar entre 0 e 10.");
+        //        }
+        //        avaliacao = value;
+        //    }
+        //}
 
 
         public void AdicionarAlbum(Album novoAlbum)

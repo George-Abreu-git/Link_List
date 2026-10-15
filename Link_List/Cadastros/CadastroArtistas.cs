@@ -1,15 +1,15 @@
 using Link_List.Models;
 
-namespace TesteAlura.Cadastros
+namespace Link_List.Cadastros
 {
    internal class CadastroArtistas
    {
-       private List<Artista> artistas = new List<Artista>();
+       private List<ArtistaMusicalSolo> artistas = new List<ArtistaMusicalSolo>();
        private int proxId = 1;
 
-       public Artista CadastrarArtistaSolo(string nome)
+       public ArtistaMusicalSolo CadastrarArtistaSolo(string nome)
        {
-           Artista artista = new Artista(proxId, nome);
+           ArtistaMusicalSolo artista = new ArtistaMusicalSolo(proxId, nome);
            artistas.Add(artista);
            proxId++;
            return artista;
@@ -17,7 +17,7 @@ namespace TesteAlura.Cadastros
 
        public void ExcluirArtista(int id)
        {
-           if (VerificarIdExistente(id, out Artista artista))
+           if (VerificarIdExistente(id, out ArtistaMusicalSolo artista))
            {
                artistas.Remove(artista);
            }
@@ -25,15 +25,15 @@ namespace TesteAlura.Cadastros
 
        public void ListarAtrações()
        {
-           foreach (Artista registro in artistas)
+           foreach (ArtistaMusicalSolo registro in artistas)
            {
                Console.WriteLine($"{registro.Id} - {registro.Nome}\n");
            }
        }
 
-       public bool VerificarIdExistente(int id, out Artista artista)
+       public bool VerificarIdExistente(int id, out ArtistaMusicalSolo artista)
        {
-           foreach (Artista artistaCadastrado in artistas)
+           foreach (ArtistaMusicalSolo artistaCadastrado in artistas)
            {
                if (artistaCadastrado.Id == id)
                {
@@ -43,18 +43,18 @@ namespace TesteAlura.Cadastros
            }
 
 
-           // REVIEW 🟡: O parâmetro out é Artista (não aceita null), mas aqui você atribui null. Com Nullable ligado, o que o compilador avisa? Como o tipo poderia dizer "pode vir vazio quando retornar false"?
+           
            artista = null;
            return false;
        }
 
-       public Banda CadastrarBanda(string nome)
-       {
-           Banda banda = new Banda(proxId, nome);
+       //public Banda CadastrarBanda(string nome)
+       //{
+       //    Banda banda = new Banda(proxId, nome);
 
-           artistas.Add(banda);
-           proxId++;
-           return banda;
-       }
+       //    artistas.Add(banda);
+       //    proxId++;
+       //    return banda;
+       //}
    }
 }

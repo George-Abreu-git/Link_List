@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TesteAlura.Interface
+namespace Link_List.Interface
 {
    internal interface IMenu
    {
